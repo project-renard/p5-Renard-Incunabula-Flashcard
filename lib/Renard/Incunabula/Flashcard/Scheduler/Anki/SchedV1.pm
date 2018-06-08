@@ -6,6 +6,13 @@ use Moo;
 use Time::Piece;
 use Time::Seconds;
 
+=attr day_cutoff
+
+A L<Time::Piece> for when on the current day to stop the scheduler.
+
+Defaults to 23:00 local time.
+
+=cut
 has day_cutoff => (
 	is => 'ro',
 	default => sub {
@@ -15,6 +22,11 @@ has day_cutoff => (
 	},
 );
 
+=method pop_card
+
+Returns a card from the scheduler.
+
+=cut
 method pop_card() {
 	undef;
 }
