@@ -15,4 +15,8 @@ has day_cutoff => (
 	},
 );
 
+method pop_card() {
+	undef;
+}
+
 1;
