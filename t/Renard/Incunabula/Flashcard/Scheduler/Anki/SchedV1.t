@@ -7,7 +7,9 @@ use Renard::Incunabula::Flashcard::Scheduler::Anki::SchedV1;
 use Time::Seconds;
 
 fun get_scheduler() {
-	my $sched = Renard::Incunabula::Flashcard::Scheduler::Anki::SchedV1->new;
+	my $sched = Renard::Incunabula::Flashcard::Scheduler::Anki::SchedV1->new(
+		day_cutoff => Time::Piece->localtime + ONE_DAY
+	);
 }
 
 subtest "Clock" => sub {
